@@ -1,0 +1,36 @@
+spring:
+
+
+  # DataSource Config
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dwapi
+    username: root
+    password: 123456
+  #
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # ȫ���߼�ɾ����ʵ���ֶ���(since 3.3.0,���ú���Ժ��Բ����ò���2)
+      logic-delete-value: 1 # �߼���ɾ��ֵ(Ĭ��Ϊ 1)
+      logic-not-delete-value: 0 # �߼�δɾ��ֵ(Ĭ��Ϊ 0)
+
+duwss:
+  api:
+    secret-key: sdf
+    access-key: sdfsf
+
+

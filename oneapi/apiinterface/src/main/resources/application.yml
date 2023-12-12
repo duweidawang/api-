@@ -1,0 +1,10 @@
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: apiinterface
+  cloud:
+    nacos:
+      server-addr: localhost:8848

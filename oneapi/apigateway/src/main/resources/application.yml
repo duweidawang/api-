@@ -1,0 +1,25 @@
+
+server:
+  port: 8999
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: host_route
+          uri: http://localhost:8123
+          predicates:
+            - Path=/api/**
+    nacos:
+      config:
+        server-addr: localhost:8848
+        import-check:
+          enabled: false
+
+  application:
+    name: apigateway
+
+  main:
+    allow-bean-definition-overriding: true
+    web-application-type: reactive
+
+
